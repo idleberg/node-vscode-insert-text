@@ -19,28 +19,23 @@ const insertText = (text: string, userOptions: PackageOptions): void => {
 
   const options = Object.assign(defaultOptions, userOptions);
 
-  if (options.append && options.prepend) {
-    throw 'Conflicting options';
-  }
-
   activeTextEditor.edit(
     edit => activeTextEditor.selections.forEach(
-      (selection, index) => {
+      selection => {
         if (!options.append && !options.prepend) {
           edit.delete(selection);
           return edit.insert(selection.start, text);
         }
 
         if (options.append) {
-          text = (options.newLine) ? `\n${text}` : text;
-          edit.insert(selection.end, text);
+          const appendText = (options.newLine) ? `\n${text}` : text;
+          edit.insert(selection.end, appendText);
         }
 
         if (options.prepend) {
-          text = (options.newLine) ? `${text}\n` : text;
-          edit.insert(selection.start, text);
+          const prependText = (options.newLine) ? `${text}\n` : text;
+          edit.insert(selection.start, prependText);
         }
-
       }
     )
   );

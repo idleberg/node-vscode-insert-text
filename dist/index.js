@@ -12,21 +12,18 @@ var insertText = function (text, userOptions) {
     if (!activeTextEditor)
         return;
     var options = Object.assign(defaultOptions, userOptions);
-    if (options.append && options.prepend) {
-        throw 'Conflicting options';
-    }
-    activeTextEditor.edit(function (edit) { return activeTextEditor.selections.forEach(function (selection, index) {
+    activeTextEditor.edit(function (edit) { return activeTextEditor.selections.forEach(function (selection) {
         if (!options.append && !options.prepend) {
             edit.delete(selection);
             return edit.insert(selection.start, text);
         }
         if (options.append) {
-            text = (options.newLine) ? "\n" + text : text;
-            edit.insert(selection.end, text);
+            var appendText = (options.newLine) ? "\n" + text : text;
+            edit.insert(selection.end, appendText);
         }
         if (options.prepend) {
-            text = (options.newLine) ? text + "\n" : text;
-            edit.insert(selection.start, text);
+            var prependText = (options.newLine) ? text + "\n" : text;
+            edit.insert(selection.start, prependText);
         }
     }); });
 };

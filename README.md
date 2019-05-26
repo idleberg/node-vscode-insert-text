@@ -13,7 +13,7 @@ Easily insert text into the active editor
 
 ## Usage
 
-### `insertText(text: string)`
+`insertText(text: string)`
 
 Inserts text at the current cursor position(s)
 

@@ -43,7 +43,7 @@ Prepends text to current selection
 Type: `boolean`  
 Default: `false`  
 
-Inserts a new line before or after the inserted text. Only worky with `options.append` or `options.prepend`.
+Inserts a new line before or after the inserted text. Only works with `options.append` or `options.prepend` enabled.
 
 ## License
 

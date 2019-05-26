@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var vscode_1 = require("vscode");
 var defaultOptions = {
     append: false,
-    prepend: false,
     newLine: false
 };
 var insertText = function (text, userOptions) {
@@ -13,18 +12,11 @@ var insertText = function (text, userOptions) {
         return;
     var options = Object.assign(defaultOptions, userOptions);
     activeTextEditor.edit(function (edit) { return activeTextEditor.selections.forEach(function (selection) {
-        if (!options.append && !options.prepend) {
+        if (!options.append)
             edit.delete(selection);
-            return edit.insert(selection.start, text);
-        }
-        if (options.append) {
-            var appendText = (options.newLine) ? "\n" + text : text;
-            edit.insert(selection.end, appendText);
-        }
-        if (options.prepend) {
-            var prependText = (options.newLine) ? text + "\n" : text;
-            edit.insert(selection.start, prependText);
-        }
+        var position = (options.append) ? selection.end : selection.start;
+        var textStr = (options.append && options.newLine) ? "\n" + text : text;
+        edit.insert(position, textStr);
     }); });
 };
 exports.insertText = insertText;

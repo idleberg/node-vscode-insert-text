@@ -7,6 +7,7 @@ var defaultOptions = {
     newLine: false
 };
 var insertText = function (text, userOptions) {
+    if (userOptions === void 0) { userOptions = {}; }
     var activeTextEditor = vscode_1.window.activeTextEditor;
     if (!activeTextEditor)
         return;

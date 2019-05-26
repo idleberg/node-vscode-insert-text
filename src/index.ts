@@ -11,7 +11,7 @@ const defaultOptions: PackageOptions = {
   newLine: false
 };
 
-const insertText = (text: string, userOptions: PackageOptions): void => {
+const insertText = (text: string, userOptions: PackageOptions = {}): void => {
   const activeTextEditor: TextEditor|undefined = window.activeTextEditor;
   if (!activeTextEditor) return;
 

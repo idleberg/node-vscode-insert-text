@@ -36,7 +36,7 @@ Appends text to current selection
 Type: `boolean`  
 Default: `false`  
 
-Inserts a new line before or after the inserted text. Only works with `options.append` enabled.
+Inserts a new line before or after the inserted text. Requires`options.append`.
 
 ## License
 

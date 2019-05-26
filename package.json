@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --pretty --project ./",
     "dev": "tsc --watch --pretty --project ./",
-    "lint": "tslint --project .",
+    "lint": "tslint --project ./",
     "test": "npm run lint"
   },
   "main": "index.js",

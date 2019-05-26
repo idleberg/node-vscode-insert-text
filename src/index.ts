@@ -16,4 +16,4 @@ const insertText = (text: string): void => {
 
 export {
   insertText
-}
+};

@@ -31,19 +31,12 @@ Default: `false`
 
 Appends text to current selection
 
-#### `options.prepend`
-
-Type: `boolean`  
-Default: `false`  
-
-Prepends text to current selection
-
 #### `options.newLine`
 
 Type: `boolean`  
 Default: `false`  
 
-Inserts a new line before or after the inserted text. Only works with `options.append` or `options.prepend` enabled.
+Inserts a new line before or after the inserted text. Only works with `options.append` enabled.
 
 ## License
 

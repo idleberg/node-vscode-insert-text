@@ -15,8 +15,6 @@ Easily insert text into the active editor
 
 `insertText(text: string)`
 
-Inserts text at the current cursor position(s)
-
 **Example:**
 
 ```js

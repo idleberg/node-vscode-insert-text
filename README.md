@@ -24,21 +24,24 @@ insertText('Lorem ipsum');
 ```
 ### Options
 
-#### `options.append: bool`
+#### `options.append`
 
-Default: `false`
+Type: `boolean`  
+Default: `false`  
 
 Appends text to current selection
 
-#### `options.prepend: bool`
+#### `options.prepend`
 
-Default: `false`
+Type: `boolean`  
+Default: `false`  
 
 Prepends text to current selection
 
-#### `options.newLine: bool`
+#### `options.newLine`
 
-Default: `false`
+Type: `boolean`  
+Default: `false`.  
 
 Inserts a new line before or after the inserted text. Only worky with `options.append` or `options.prepend`.
 

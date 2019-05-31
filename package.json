@@ -12,7 +12,7 @@
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/idleberg/node-vscode-read-manifest.git"
+    "url": "https://github.com/idleberg/node-vscode-insert-text.git"
   },
   "keywords": [
     "vscode",

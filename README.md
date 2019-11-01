@@ -13,7 +13,7 @@ Easily insert text into the active editor
 
 ## Usage
 
-`insertText(text: string, options: Object)`
+`insertText(text: string, appendText: boolean = false, newLine: boolean = false)`
 
 **Example:**
 
@@ -22,21 +22,6 @@ const { insertText } = require('vscode-insert-text');
 
 insertText('Lorem ipsum');
 ```
-### Options
-
-#### `options.append`
-
-Type: `boolean`  
-Default: `false`  
-
-Appends text to current selection
-
-#### `options.newLine`
-
-Type: `boolean`  
-Default: `false`  
-
-Inserts a new line before the inserted text. Requires`options.append`.
 
 ## License
 

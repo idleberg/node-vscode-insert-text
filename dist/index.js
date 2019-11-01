@@ -2,21 +2,17 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 // @ts-ignore
 var vscode_1 = require("vscode");
-var defaultOptions = {
-    append: false,
-    newLine: false
-};
-var insertText = function (text, userOptions) {
-    if (userOptions === void 0) { userOptions = {}; }
+var insertText = function (text, appendText, newLine) {
+    if (appendText === void 0) { appendText = false; }
+    if (newLine === void 0) { newLine = false; }
     var activeTextEditor = vscode_1.window.activeTextEditor;
     if (!activeTextEditor)
         return;
-    var options = Object.assign(defaultOptions, userOptions);
     activeTextEditor.edit(function (edit) { return activeTextEditor.selections.forEach(function (selection) {
-        if (!options.append)
+        if (appendText)
             edit.delete(selection);
-        var position = (options.append) ? selection.end : selection.start;
-        var textStr = (options.append && options.newLine) ? "\n" + text : text;
+        var position = (appendText) ? selection.end : selection.start;
+        var textStr = (appendText && newLine) ? "\n" + text : text;
         edit.insert(position, textStr);
     }); });
 };

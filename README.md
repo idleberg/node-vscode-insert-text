@@ -13,7 +13,9 @@ Easily insert text into the active editor
 
 ## Usage
 
-`insertText(text: string, appendText: boolean = false, newLine: boolean = false)`
+```ts
+insertText(text: string, appendText: boolean = false, newLine: boolean = false)
+```
 
 **Example:**
 

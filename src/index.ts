@@ -13,7 +13,7 @@ const insertText = (text: string, appendText = false, newLine = false): void => 
           ? selection.end
           : selection.start;
 
-          const value: string = appendText && newLine
+        const value: string = appendText && newLine
           ? `\n${text}`
           : text;
 

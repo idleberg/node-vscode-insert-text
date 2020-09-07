@@ -7,10 +7,6 @@ const defaults = {
   external: [
     'vscode'
   ],
-  output: {
-    dir: 'dist',
-    format: 'cjs'
-  },
   plugins: [
     commonjs(),
     filesize(),
@@ -23,5 +19,17 @@ export default [
   {
     ...defaults,
     input: 'src/index.ts',
+    output: {
+      file: 'dist/index.cjs.js',
+      format: 'cjs'
+    }
+  },
+  {
+    ...defaults,
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/index.esm.js',
+      format: 'esm'
+    },
   }
 ];

@@ -1,17 +1,18 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.insertText = void 0;
-var vscode_1 = require("vscode");
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var vscode = require('vscode');
+
 var insertText = function (text, appendText, newLine) {
     if (appendText === void 0) { appendText = false; }
     if (newLine === void 0) { newLine = false; }
-    var activeTextEditor = vscode_1.window.activeTextEditor;
+    var activeTextEditor = vscode.window.activeTextEditor;
     if (!activeTextEditor)
         return;
-    activeTextEditor.edit(function (edit) { return activeTextEditor.selections.forEach(function (selection) {
+    activeTextEditor.edit(function (edit) { return activeTextEditor.selections.map(function (selection) {
         if (!appendText)
-            edit.delete(selection);
+            edit["delete"](selection);
         var location = appendText
             ? selection.end
             : selection.start;
@@ -21,4 +22,5 @@ var insertText = function (text, appendText, newLine) {
         edit.insert(location, value);
     }); });
 };
+
 exports.insertText = insertText;

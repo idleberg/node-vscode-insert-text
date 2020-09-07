@@ -10,7 +10,8 @@
     "lint": "eslint ./src",
     "start": "rollup --watch --config"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/idleberg/node-vscode-insert-text.git"

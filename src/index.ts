@@ -1,7 +1,6 @@
-// @ts-ignore
-import { TextEditor, Selection, window } from 'vscode';
+import { TextEditor, Position, window } from 'vscode';
 
-const insertText = (text: string, appendText: boolean = false, newLine: boolean = false): void => {
+const insertText = (text: string, appendText = false, newLine = false): void => {
   const activeTextEditor: TextEditor|undefined = window.activeTextEditor;
   if (!activeTextEditor) return;
 
@@ -10,10 +9,15 @@ const insertText = (text: string, appendText: boolean = false, newLine: boolean 
       selection => {
         if (!appendText) edit.delete(selection);
 
-        const position: Selection = (appendText) ? selection.end : selection.start;
-        const textStr: string = (appendText && newLine) ? `\n${text}` : text;
+        const location: Position = appendText
+          ? selection.end
+          : selection.start;
 
-        edit.insert(position, textStr);
+          const value: string = appendText && newLine
+          ? `\n${text}`
+          : text;
+
+        edit.insert(location, value);
       }
     )
   );

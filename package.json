@@ -1,42 +1,59 @@
 {
-  "name": "vscode-insert-text",
-  "version": "1.1.0",
-  "description": "Easily insert text into the active editor",
-  "license": "MIT",
-  "scripts": {
-    "build": "rollup --config",
-    "dev": "npm run start",
-    "fix": "eslint --fix ./src",
-    "lint": "eslint ./src",
-    "start": "rollup --watch --config"
-  },
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/idleberg/node-vscode-insert-text.git"
-  },
-  "keywords": [
-    "vscode",
-    "vscode extension"
-  ],
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^15.0.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "@rollup/plugin-typescript": "^5.0.2",
-    "@types/node": "^14.6.4",
-    "@types/vscode": "^1.48.0",
-    "@typescript-eslint/eslint-plugin": "^4.0.1",
-    "@typescript-eslint/parser": "^4.0.1",
-    "eslint": "^7.8.1",
-    "husky": "^4.3.0",
-    "rollup": "^2.26.10",
-    "rollup-plugin-filesize": "^9.0.2",
-    "typescript": "^4.0.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint"
-    }
-  }
+	"name": "vscode-insert-text",
+	"version": "1.1.0",
+	"description": "Easily insert text into the active editor",
+	"license": "MIT",
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"lint": "concurrently npm:lint:*",
+		"lint:biome": "biome check",
+		"lint:knip": "knip --production",
+		"lint:publint": "publint",
+		"prepack": "npm run build",
+		"prepare": "lefthook install",
+		"publish:npm": "np --package-manager pnpm --any-branch",
+		"test": "vitest run",
+		"test:coverage": "vitest --coverage"
+	},
+	"type": "module",
+	"exports": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"engines": {
+		"node": "^18.0.0 || ^20.0.0 || >=22.0.0"
+	},
+	"files": [
+		"dist/",
+		"LICENSE",
+		"README.md"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/idleberg/node-vscode-insert-text.git"
+	},
+	"keywords": [
+		"vscode",
+		"vscode extension"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"@commitlint/cli": "^20.1.0",
+		"@commitlint/config-conventional": "^20.0.0",
+		"@idleberg/configs": "^0.3.1",
+		"@total-typescript/tsconfig": "^1.0.4",
+		"@types/node": "^24.7.0",
+		"@types/vscode": "^1.104.0",
+		"@vitest/coverage-v8": "^3.2.4",
+		"@vitest/ui": "^3.2.4",
+		"concurrently": "^9.2.1",
+		"jsonlint": "^1.6.3",
+		"knip": "^5.64.2",
+		"np": "^10.2.0",
+		"publint": "^0.3.14",
+		"tsdown": "^0.15.6",
+		"tslib": "^2.0.3",
+		"typescript": "^5.9.3",
+		"vitest": "^3.2.4"
+	},
+	"packageManager": "pnpm@10.18.1+sha512.77a884a165cbba2d8d1c19e3b4880eee6d2fcabd0d879121e282196b80042351d5eb3ca0935fa599da1dc51265cc68816ad2bddd2a2de5ea9fdf92adbec7cd34"
 }

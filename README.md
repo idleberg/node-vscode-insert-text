@@ -1,9 +1,8 @@
 # vscode-insert-text
 
-[![npm](https://flat.badgen.net/npm/license/vscode-insert-text)](https://www.npmjs.org/package/vscode-insert-text)
-[![npm](https://flat.badgen.net/npm/v/vscode-insert-text)](https://www.npmjs.org/package/vscode-insert-text)
-[![CircleCI](https://flat.badgen.net/circleci/github/idleberg/node-vscode-insert-text)](https://circleci.com/gh/idleberg/node-vscode-insert-text)
-[![David](https://flat.badgen.net/david/dep/idleberg/node-vscode-insert-text)](https://david-dm.org/idleberg/node-vscode-insert-text)
+[![License](https://img.shields.io/github/license/idleberg/node-vscode-insert-text?color=blue&style=for-the-badge)](https://github.com/idleberg/node-vscode-insert-text/blob/main/LICENSE)
+[![Version: npm](https://img.shields.io/npm/v/vscode-insert-text?style=for-the-badge)](https://www.npmjs.org/package/vscode-insert-text)
+![GitHub branch check runs](https://img.shields.io/github/check-runs/idleberg/node-vscode-insert-text/main?style=for-the-badge)
 
 Easily insert text into the active editor
 
@@ -27,4 +26,4 @@ insertText('Lorem ipsum');
 
 ## License
 
-This work is licensed under [The MIT License](https://opensource.org/licenses/MIT)
+This work is licensed under [The MIT License](LICENSE).
